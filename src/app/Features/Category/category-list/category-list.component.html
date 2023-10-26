@@ -4,12 +4,14 @@
         <a class="btn btn-primary" [routerLink]="['/admin/categories/add']">Add Category</a>
     </div>
     <ng-container *ngIf="categories$| async as categories">
-        <table class="table table-bordered mt-3">
+        <table class="table table-bordered mt-3 table table-striped table-dark">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Url Handle</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -17,6 +19,12 @@
                 <td>{{cat.id}}</td>
                 <td>{{cat.name}}</td>
                 <td>{{cat.urlHandle}}</td>
+                <td>
+                    <a  class="btn btn-light" [routerLink]="['/admin/categories',cat.id]">Edit</a>
+                </td>
+                <td>
+                    <a  class="btn btn-light" [routerLink]="['/admin/categories',cat.id]">Delete</a>
+                </td>
                 </tr>
             </tbody>
         </table>
